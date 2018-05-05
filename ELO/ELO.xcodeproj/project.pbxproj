@@ -14,6 +14,7 @@
 		CC9AE755209E51380061695E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC9AE74E209E51380061695E /* SVProgressHUD.bundle */; };
 		CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE750209E51380061695E /* SVProgressHUD.m */; };
 		CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE752209E51380061695E /* SVRadialGradientLayer.m */; };
+		CC9AE75F209E51940061695E /* ELOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE75E209E51940061695E /* ELOTests.swift */; };
 		CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */; };
 		CCEA84A9209DEC86000E8AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A8209DEC86000E8AB1 /* ViewController.swift */; };
 		CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AA209DEC86000E8AB1 /* Main.storyboard */; };
@@ -21,6 +22,16 @@
 		CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */; };
 		CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84B9209DED9E000E8AB1 /* gotjson.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC9AE761209E51940061695E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCEA849B209DEC86000E8AB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCEA84A2209DEC86000E8AB1;
+			remoteInfo = ELO;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
@@ -34,6 +45,9 @@
 		CC9AE750209E51380061695E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		CC9AE751209E51380061695E /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		CC9AE752209E51380061695E /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		CC9AE75C209E51940061695E /* ELOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC9AE75E209E51940061695E /* ELOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELOTests.swift; sourceTree = "<group>"; };
+		CC9AE760209E51940061695E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCEA84A3209DEC86000E8AB1 /* ELO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCEA84A8209DEC86000E8AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CC9AE759209E51940061695E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCEA84A0209DEC86000E8AB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,10 +116,20 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		CC9AE75D209E51940061695E /* ELOTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC9AE75E209E51940061695E /* ELOTests.swift */,
+				CC9AE760209E51940061695E /* Info.plist */,
+			);
+			path = ELOTests;
+			sourceTree = "<group>";
+		};
 		CCEA849A209DEC86000E8AB1 = {
 			isa = PBXGroup;
 			children = (
 				CCEA84A5209DEC86000E8AB1 /* ELO */,
+				CC9AE75D209E51940061695E /* ELOTests */,
 				CCEA84A4209DEC86000E8AB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CCEA84A3209DEC86000E8AB1 /* ELO.app */,
+				CC9AE75C209E51940061695E /* ELOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +171,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CC9AE75B209E51940061695E /* ELOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC9AE763209E51940061695E /* Build configuration list for PBXNativeTarget "ELOTests" */;
+			buildPhases = (
+				CC9AE758209E51940061695E /* Sources */,
+				CC9AE759209E51940061695E /* Frameworks */,
+				CC9AE75A209E51940061695E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC9AE762209E51940061695E /* PBXTargetDependency */,
+			);
+			name = ELOTests;
+			productName = ELOTests;
+			productReference = CC9AE75C209E51940061695E /* ELOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CCEA84A2209DEC86000E8AB1 /* ELO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCEA84B5209DEC86000E8AB1 /* Build configuration list for PBXNativeTarget "ELO" */;
@@ -166,6 +216,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Infinitum Inc";
 				TargetAttributes = {
+					CC9AE75B209E51940061695E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CCEA84A2209DEC86000E8AB1;
+					};
 					CCEA84A2209DEC86000E8AB1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -186,11 +241,19 @@
 			projectRoot = "";
 			targets = (
 				CCEA84A2209DEC86000E8AB1 /* ELO */,
+				CC9AE75B209E51940061695E /* ELOTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CC9AE75A209E51940061695E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCEA84A1209DEC86000E8AB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +269,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CC9AE758209E51940061695E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC9AE75F209E51940061695E /* ELOTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCEA849F209DEC86000E8AB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +293,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC9AE762209E51940061695E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCEA84A2209DEC86000E8AB1 /* ELO */;
+			targetProxy = CC9AE761209E51940061695E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CCEA84AA209DEC86000E8AB1 /* Main.storyboard */ = {
@@ -243,6 +322,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CC9AE764209E51940061695E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2QG6B4259;
+				INFOPLIST_FILE = ELOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vn.org.ELOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELO.app/ELO";
+			};
+			name = Debug;
+		};
+		CC9AE765209E51940061695E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2QG6B4259;
+				INFOPLIST_FILE = ELOTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vn.org.ELOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELO.app/ELO";
+			};
+			name = Release;
+		};
 		CCEA84B3209DEC86000E8AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,6 +494,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CC9AE763209E51940061695E /* Build configuration list for PBXNativeTarget "ELOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC9AE764209E51940061695E /* Debug */,
+				CC9AE765209E51940061695E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CCEA849E209DEC86000E8AB1 /* Build configuration list for PBXProject "ELO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
