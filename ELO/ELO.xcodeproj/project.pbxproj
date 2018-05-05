@@ -12,6 +12,7 @@
 		CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AA209DEC86000E8AB1 /* Main.storyboard */; };
 		CCEA84AE209DEC86000E8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */; };
 		CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */; };
+		CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84B9209DED9E000E8AB1 /* gotjson.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEA84B0209DEC86000E8AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEA84B2209DEC86000E8AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCEA84B9209DED9E000E8AB1 /* gotjson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gotjson.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,20 @@
 				CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */,
 				CCEA84A8209DEC86000E8AB1 /* ViewController.swift */,
 				CCEA84AA209DEC86000E8AB1 /* Main.storyboard */,
+				CCEA84B8209DED81000E8AB1 /* JSONStub */,
 				CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */,
 				CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */,
 				CCEA84B2209DEC86000E8AB1 /* Info.plist */,
 			);
 			path = ELO;
+			sourceTree = "<group>";
+		};
+		CCEA84B8209DED81000E8AB1 /* JSONStub */ = {
+			isa = PBXGroup;
+			children = (
+				CCEA84B9209DED9E000E8AB1 /* gotjson.json */,
+			);
+			path = JSONStub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */,
 				CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */,
 				CCEA84AE209DEC86000E8AB1 /* Assets.xcassets in Resources */,
 				CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */,
