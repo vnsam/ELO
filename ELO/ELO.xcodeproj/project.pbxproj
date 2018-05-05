@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE734209E4E280061695E /* BattleInfoService.swift */; };
 		CC9AE738209E4F090061695E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE737209E4F090061695E /* Constants.swift */; };
+		CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */; };
+		CC9AE754209E51380061695E /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74D209E51380061695E /* SVProgressAnimatedView.m */; };
+		CC9AE755209E51380061695E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC9AE74E209E51380061695E /* SVProgressHUD.bundle */; };
+		CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE750209E51380061695E /* SVProgressHUD.m */; };
+		CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE752209E51380061695E /* SVRadialGradientLayer.m */; };
 		CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */; };
 		CCEA84A9209DEC86000E8AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A8209DEC86000E8AB1 /* ViewController.swift */; };
 		CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AA209DEC86000E8AB1 /* Main.storyboard */; };
@@ -20,6 +25,15 @@
 /* Begin PBXFileReference section */
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		CC9AE74C209E51380061695E /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		CC9AE74D209E51380061695E /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		CC9AE74E209E51380061695E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CC9AE74F209E51380061695E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		CC9AE750209E51380061695E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		CC9AE751209E51380061695E /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		CC9AE752209E51380061695E /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		CCEA84A3209DEC86000E8AB1 /* ELO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCEA84A8209DEC86000E8AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +71,30 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		CC9AE748209E51380061695E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				CC9AE749209E51380061695E /* SVProgressHUD */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		CC9AE749209E51380061695E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */,
+				CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */,
+				CC9AE74C209E51380061695E /* SVProgressAnimatedView.h */,
+				CC9AE74D209E51380061695E /* SVProgressAnimatedView.m */,
+				CC9AE74E209E51380061695E /* SVProgressHUD.bundle */,
+				CC9AE74F209E51380061695E /* SVProgressHUD.h */,
+				CC9AE750209E51380061695E /* SVProgressHUD.m */,
+				CC9AE751209E51380061695E /* SVRadialGradientLayer.h */,
+				CC9AE752209E51380061695E /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		CCEA849A209DEC86000E8AB1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +118,7 @@
 				CCEA84A8209DEC86000E8AB1 /* ViewController.swift */,
 				CCEA84AA209DEC86000E8AB1 /* Main.storyboard */,
 				CC9AE736209E4EFA0061695E /* Constants */,
+				CC9AE748209E51380061695E /* Libraries */,
 				CC9AE733209E4E0F0061695E /* NetworkService */,
 				CCEA84B8209DED81000E8AB1 /* JSONStub */,
 				CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */,
@@ -156,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9AE755209E51380061695E /* SVProgressHUD.bundle in Resources */,
 				CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */,
 				CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */,
 				CCEA84AE209DEC86000E8AB1 /* Assets.xcassets in Resources */,
@@ -170,10 +210,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
 				CCEA84A9209DEC86000E8AB1 /* ViewController.swift in Sources */,
 				CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */,
+				CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */,
+				CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */,
 				CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */,
 				CC9AE738209E4F090061695E /* Constants.swift in Sources */,
+				CC9AE754209E51380061695E /* SVProgressAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
