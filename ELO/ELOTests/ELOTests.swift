@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import ELO
 
 class ELOTests: XCTestCase {
     override func setUp() {
@@ -26,5 +27,15 @@ class ELOTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    func testJSONObjectsDecode() {
+        guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
+            let data = try? Data.init(contentsOf: jsonPath) else {
+            XCTAssert(false, "JSON file not present in the path specified")
+                return
+        }
+        let decoder = JSONDecoder.init()
+        let battles = try? decoder.decode([Battle].self, from: data)
+        XCTAssert(nil != battles)
     }
 }

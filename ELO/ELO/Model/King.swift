@@ -16,5 +16,14 @@ protocol KingDetails {
     var battles: [Battle] { get }
 }
 
-class King {
+class King: KingDetails {
+    var name: String = ""
+    var battlesWon: Int = 0
+    var battlesLost: Int = 0
+    var totalOpponents: Int = 0
+    var battles: [Battle] = []
+    fileprivate (set)var battlesFought: [Battle] = []
+    init(name: String) {
+        self.name = name
+    }
 }

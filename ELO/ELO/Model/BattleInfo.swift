@@ -17,7 +17,7 @@ protocol BattleDetails {
     var region: String { get }
 }
 
-class Battle: BattleDetails {
+class Battle: BattleDetails, Decodable {
     var name: String {
         return attributes[CodingKeys.name.rawValue] as? String ?? ""
     }
@@ -36,9 +36,9 @@ class Battle: BattleDetails {
     var region: String {
         return attributes[CodingKeys.region.rawValue] as? String ?? ""
     }
-    fileprivate var attributes: [AnyHashable: Any]
+    fileprivate var attributes: [AnyHashable: Any?]
     // MARK: - Init
-    init(attributes: [AnyHashable: Any]) {
+    init(attributes: [AnyHashable: Any?]) {
         self.attributes = attributes
     }
     // MARK: - Decoding
@@ -51,5 +51,14 @@ class Battle: BattleDetails {
         case region = "region"
         static let all: [CodingKeys] = [.name, .attackerking, .defenderking,
                                         .attackeroutcome, .location, .region]
+    }
+    public required convenience init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        var attributes: [AnyHashable: Any?] = [:]
+        for codingKey in CodingKeys.all {
+            let key = codingKey.rawValue
+            attributes[key] = try values.decodeIfPresent(String.self, forKey: codingKey)
+        }
+        self.init(attributes: attributes)
     }
 }
