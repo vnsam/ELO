@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Battle {
+protocol BattleDetails {
     var name: String { get }
     var attackerking: String { get }
     var defenderking: String { get }
@@ -17,7 +17,7 @@ protocol Battle {
     var region: String { get }
 }
 
-class BattleInfo: Battle {
+class Battle: BattleDetails {
     var name: String {
         return attributes[CodingKeys.name.rawValue] as? String ?? ""
     }
@@ -37,6 +37,7 @@ class BattleInfo: Battle {
         return attributes[CodingKeys.region.rawValue] as? String ?? ""
     }
     fileprivate var attributes: [AnyHashable: Any]
+    // MARK: - Init
     init(attributes: [AnyHashable: Any]) {
         self.attributes = attributes
     }
