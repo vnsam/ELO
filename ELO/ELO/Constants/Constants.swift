@@ -9,16 +9,14 @@
 import Foundation
 
 struct Constants {
-    
 }
 
-//  MARK:-  Network
+// MARK: - Network
 extension Constants {
     struct Network {
         static let baseURL = "http://starlord.hackerearth.com/"
-        
-        struct Endpoint {
-            static let battleInfo = "gotjson"
-        }
+    }
+    struct Endpoint {
+        static let battleInfo = "gotjson"
     }
 }
