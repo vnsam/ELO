@@ -25,7 +25,7 @@ class King: KingDetails, BattleScore {
         }
     }
     var totalOpponents: Int {
-        return battles.count // Follow up on the comment above
+        return battles.count // Follow up on the comment from Protocol - What if 2 kings fight against a king. This ain't accurate.
     }
     var battles: [Battle] {
         get {

@@ -8,16 +8,19 @@
 
 import Foundation
 
-func mapKingToBattles(_ battles: [Battle]) {
+func mapKingToBattles(_ battles: [Battle]) -> [King]? {
     let attackerKingNames = battles.map { $0.attackerking }
     let defenderKingNames = battles.map { $0.defenderking }
-    let uniqueKingNames = Set.init(attackerKingNames + defenderKingNames).filter { $0.count > 0 } // I do see some nameless kings in JSON. Trimming these nameless kings.
+    /*
+        I do see some nameless kings in JSON. Trimming these nameless kings. | ON SET |
+    */
+    let uniqueKingNames = Set.init(attackerKingNames + defenderKingNames).filter { $0.count > 0 }
     let uniqueKings = Array.init(uniqueKingNames).map { King.init(name: $0) }
     debugPrint("Filtered unique Kings: \(uniqueKings.map { $0.name })")
     for battle in battles {
         guard let attackerKing = uniqueKings.filter ({ $0.name == battle.attackerking }).first,
                 let defenderKing = uniqueKings.filter ({ $0.name == battle.defenderking }).first else {
-                    return
+                    return nil
         }
         //  Battles
         attackerKing.addBattle(battle)
@@ -42,4 +45,5 @@ func mapKingToBattles(_ battles: [Battle]) {
                        wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
     }
     debugPrint("Finished parsing...")
+    return uniqueKings
 }
