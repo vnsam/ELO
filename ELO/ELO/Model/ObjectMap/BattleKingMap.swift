@@ -36,17 +36,12 @@ class BattleKingMap {
                 attackerKing.attacks += 1
                 defenderKing.defenses += 1
                 // Elo Score
-                /*
-                attackerKing.eloScore = ELOCalculator
-                    .calculate(opponentScore: defenderKing.eloScore,
-                               wins: defenderKing.battlesWon, losses: defenderKing.battlesLost)
-                defenderKing.eloScore = ELOCalculator
-                    .calculate(opponentScore: attackerKing.eloScore,
-                               wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
-                */
-                ELOCalculator.update(attacker: attackerKing, defender: defenderKing, attackerWon: Constants.Battle.AttackerOutcome.win == battle.attackerOutcome)
+                ELOCalculator.update(attacker: attackerKing,
+                                     defender: defenderKing,
+                                     attackerWon: Constants.Battle.AttackerOutcome.win == battle.attackerOutcome)
             }
         }
-        return uniqueKings
+        let sortedKings = uniqueKings.sorted( by: {$0.eloScore > $1.eloScore} )
+        return sortedKings
     }
 }

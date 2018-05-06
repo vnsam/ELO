@@ -24,8 +24,8 @@ class ELOCalculator {
         var r1: Double = attacker.eloScore
         var r2: Double = defender.eloScore
         
-        r1 = pow(10, (r1 / 400.0))
-        r2 = pow(10, (r2 / 400.0))
+        r1 = pow(10, (r1 / Constants.ELO.factor))
+        r2 = pow(10, (r2 / Constants.ELO.factor))
         
         var expectedScoreR1: Double = 0.0
         var expectedScoreR2: Double = 0.0
@@ -39,11 +39,11 @@ class ELOCalculator {
         */
         
         if attackerWon {
-            r1 = r1 + 32 * (1.0 - expectedScoreR1)
-            r2 = r2 + 32 * (0.0 - expectedScoreR2)
+            r1 = attacker.eloScore + Constants.ELO.K * (Constants.ELO.winScore - expectedScoreR1)
+            r2 = defender.eloScore + Constants.ELO.K * (Constants.ELO.loseScore - expectedScoreR2)
         } else {
-            r1 = r1 + 32 * (0.0 - expectedScoreR1)
-            r2 = r2 + 32 * (1.0 - expectedScoreR2)
+            r1 = attacker.eloScore + Constants.ELO.K * (Constants.ELO.loseScore - expectedScoreR1)
+            r2 = defender.eloScore + Constants.ELO.K * (Constants.ELO.winScore - expectedScoreR2)
         }
     
         attacker.eloScore = r1
