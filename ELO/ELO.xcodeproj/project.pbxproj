@@ -28,6 +28,7 @@
 		CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */; };
 		CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84B9209DED9E000E8AB1 /* gotjson.json */; };
 		CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5DE70209EA08B00733596 /* BattleScore.swift */; };
+		CCF5DE75209EB67100733596 /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5DE74209EB67100733596 /* ImageMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		CCEA84B2209DEC86000E8AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCEA84B9209DED9E000E8AB1 /* gotjson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gotjson.json; sourceTree = "<group>"; };
 		CCF5DE70209EA08B00733596 /* BattleScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleScore.swift; sourceTree = "<group>"; };
+		CCF5DE74209EB67100733596 /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		CCEA84A5209DEC86000E8AB1 /* ELO */ = {
 			isa = PBXGroup;
 			children = (
+				CCF5DE72209EB66000733596 /* Components */,
 				CC9AE76F209E82CB0061695E /* Calculator */,
 				CC9AE766209E527D0061695E /* Model */,
 				CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */,
@@ -211,6 +214,22 @@
 				CCEA84B9209DED9E000E8AB1 /* gotjson.json */,
 			);
 			path = JSONStub;
+			sourceTree = "<group>";
+		};
+		CCF5DE72209EB66000733596 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CCF5DE73209EB66000733596 /* ImageMapper */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CCF5DE73209EB66000733596 /* ImageMapper */ = {
+			isa = PBXGroup;
+			children = (
+				CCF5DE74209EB67100733596 /* ImageMapper.swift */,
+			);
+			path = ImageMapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +366,7 @@
 				CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */,
 				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
 				CCEA84A9209DEC86000E8AB1 /* BattleViewController.swift in Sources */,
+				CCF5DE75209EB67100733596 /* ImageMapper.swift in Sources */,
 				CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */,
 				CC9AE768209E52870061695E /* Battle.swift in Sources */,
 				CC9AE76B209E5EC90061695E /* King.swift in Sources */,
