@@ -34,6 +34,7 @@ extension Constants {
 // MARK: - Score
 extension Constants {
     struct ELO {
-        static let initalRating = 1000
+        static let initalRating: Double = 1000.0
+        static let factor: Double = 400.0
     }
 }

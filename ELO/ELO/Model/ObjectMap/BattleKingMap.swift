@@ -11,7 +11,7 @@ import Foundation
 func mapKingToBattles(_ battles: [Battle]) {
     let attackerKingNames = battles.map { $0.attackerking }
     let defenderKingNames = battles.map { $0.defenderking }
-    let uniqueKingNames = Set.init(attackerKingNames + defenderKingNames)
+    let uniqueKingNames = Set.init(attackerKingNames + defenderKingNames).filter { $0.count > 0 } // I do see some nameless kings in JSON. Trimming these nameless kings.
     let uniqueKings = Array.init(uniqueKingNames).map { King.init(name: $0) }
     debugPrint("Filtered unique Kings: \(uniqueKings.map { $0.name })")
     for battle in battles {
@@ -33,6 +33,13 @@ func mapKingToBattles(_ battles: [Battle]) {
         // Attacks, Defenses
         attackerKing.defenses += 1
         defenderKing.attacks += 1
+        // Elo Score
+        attackerKing.eloScore = ELOCalculator
+            .calculate(opponentScore: defenderKing.eloScore,
+                       wins: defenderKing.battlesWon, losses: defenderKing.battlesLost)
+        defenderKing.eloScore = ELOCalculator
+            .calculate(opponentScore: attackerKing.eloScore,
+                       wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
     }
     debugPrint("Finished parsing...")
 }

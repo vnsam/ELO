@@ -54,7 +54,7 @@ class Battle: BattleDetails, Decodable {
     fileprivate var attributes: [AnyHashable: Any?]
     // FIXME: - attackerKing, defenderKing - should be a part of BattleInfo protocol. (todo)
     /*
-     Do you really need it here? 
+     Do you really need it here?
     */
     fileprivate var attackerKing: King {
         return King.init(name: attributes[CodingKeys.attackerking.rawValue] as? String ?? "")

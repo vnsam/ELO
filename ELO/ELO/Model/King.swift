@@ -8,7 +8,7 @@
 
 import Foundation
 
-class King: KingDetails {
+class King: KingDetails, BattleScore {
     var name: String = ""
     var battlesWon: Int {
         get {
@@ -54,6 +54,7 @@ class King: KingDetails {
     private var battlesFought: [Battle] = []
     private var numberOfAttacks: Int = 0
     private var numberOFDefenses: Int = 0
+    internal var score: Double = Constants.ELO.initalRating
     // MARK: - Init
     init(name: String) {
         self.name = name
@@ -61,5 +62,13 @@ class King: KingDetails {
     // MARK: - Setters
     func addBattle(_ battle: Battle) {
         self.battlesFought.append(battle)
+    }
+    // MARK: - BattleScore Implementation
+    var eloScore: Double {
+        get {
+            return self.score
+        } set(value) {
+            self.score = value
+        }
     }
 }

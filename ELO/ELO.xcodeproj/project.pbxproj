@@ -27,6 +27,7 @@
 		CCEA84AE209DEC86000E8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */; };
 		CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */; };
 		CCEA84BA209DED9E000E8AB1 /* gotjson.json in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84B9209DED9E000E8AB1 /* gotjson.json */; };
+		CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5DE70209EA08B00733596 /* BattleScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		CCEA84B0209DEC86000E8AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEA84B2209DEC86000E8AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCEA84B9209DED9E000E8AB1 /* gotjson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gotjson.json; sourceTree = "<group>"; };
+		CCF5DE70209EA08B00733596 /* BattleScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				CC9AE76A209E5EC90061695E /* King.swift */,
 				CC9AE772209E9F0B0061695E /* KingDetails.swift */,
 				CC9AE774209E9F350061695E /* BattleDetails.swift */,
+				CCF5DE70209EA08B00733596 /* BattleScore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				CC9AE76E209E640F0061695E /* BattleKingMap.swift in Sources */,
 				CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */,
 				CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */,
+				CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */,
 				CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */,
 				CC9AE738209E4F090061695E /* Constants.swift in Sources */,
 				CC9AE754209E51380061695E /* SVProgressAnimatedView.m in Sources */,
