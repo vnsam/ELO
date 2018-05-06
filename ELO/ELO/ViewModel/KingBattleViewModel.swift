@@ -14,7 +14,7 @@ class KingBattleViewModel: NSObject {
     fileprivate (set) var kings: [King] = []
     fileprivate (set)  var cellViewModels: [KingListViewModel] = []
     
-    var tableView: UITableView?
+    var completion: (() -> ()) = {}
 }
 
 // MARK: - Networking function + related
@@ -40,7 +40,9 @@ extension KingBattleViewModel {
                     let kings = BattleKingMap.mapKingToBattles(battles) {
                     weakSelf?.kings = kings // Append
                     
-                    weakSelf?.updateUI()
+                    weakSelf?.setCellViewModels()
+                    
+                    weakSelf?.sendCompletion()
                 }
             }
         }
@@ -99,14 +101,7 @@ extension KingBattleViewModel: UITableViewDelegate {
 
 // MARK:- UI Refresh
 extension KingBattleViewModel {
-    fileprivate func updateUI() {
-        setCellViewModels()
-        reloadTable()
-    }
-    
-    fileprivate func reloadTable() {
-        DispatchQueue.main.async {
-            self.tableView?.reloadData()
-        }
+    fileprivate func sendCompletion() {
+        completion()
     }
 }

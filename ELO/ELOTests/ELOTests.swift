@@ -61,7 +61,7 @@ class ELOTests: XCTestCase {
         }
         let decoder = JSONDecoder.init()
         let battles = try? decoder.decode([Battle].self, from: data)
-        _ = BattleKingMap.mapKingToBattles(battles!)
+        let kings = BattleKingMap.mapKingToBattles(battles!)
         XCTAssert(nil != battles)
     }
     /*

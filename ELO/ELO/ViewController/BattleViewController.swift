@@ -40,7 +40,18 @@ class BattleViewController: UIViewController {
             viewModel = KingBattleViewModel()
             tableView.delegate  = viewModel
             tableView.dataSource = viewModel
-            viewModel?.tableView = tableView
+            viewModel?.completion = {
+                self.reloadTable()
+            }
+        }
+    }
+}
+
+// MARK: - UI refresh
+extension BattleViewController {
+    fileprivate func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
