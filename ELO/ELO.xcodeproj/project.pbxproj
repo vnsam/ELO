@@ -18,6 +18,7 @@
 		CC9AE768209E52870061695E /* BattleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE767209E52870061695E /* BattleInfo.swift */; };
 		CC9AE76B209E5EC90061695E /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE76A209E5EC90061695E /* King.swift */; };
 		CC9AE76E209E640F0061695E /* BattleKingMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE76D209E640F0061695E /* BattleKingMap.swift */; };
+		CC9AE771209E82D70061695E /* ELOCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE770209E82D70061695E /* ELOCalculator.swift */; };
 		CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */; };
 		CCEA84A9209DEC86000E8AB1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */; };
 		CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AA209DEC86000E8AB1 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		CC9AE767209E52870061695E /* BattleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfo.swift; sourceTree = "<group>"; };
 		CC9AE76A209E5EC90061695E /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		CC9AE76D209E640F0061695E /* BattleKingMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleKingMap.swift; sourceTree = "<group>"; };
+		CC9AE770209E82D70061695E /* ELOCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELOCalculator.swift; sourceTree = "<group>"; };
 		CCEA84A3209DEC86000E8AB1 /* ELO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 			path = ObjectMap;
 			sourceTree = "<group>";
 		};
+		CC9AE76F209E82CB0061695E /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				CC9AE770209E82D70061695E /* ELOCalculator.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		CCEA849A209DEC86000E8AB1 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		CCEA84A5209DEC86000E8AB1 /* ELO */ = {
 			isa = PBXGroup;
 			children = (
+				CC9AE76F209E82CB0061695E /* Calculator */,
 				CC9AE766209E527D0061695E /* Model */,
 				CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */,
 				CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */,
@@ -323,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9AE771209E82D70061695E /* ELOCalculator.swift in Sources */,
 				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
 				CCEA84A9209DEC86000E8AB1 /* BattleViewController.swift in Sources */,
 				CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */,

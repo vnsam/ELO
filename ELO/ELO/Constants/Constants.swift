@@ -15,8 +15,25 @@ struct Constants {
 extension Constants {
     struct Network {
         static let baseURL = "http://starlord.hackerearth.com/"
+        struct Endpoint {
+            static let battleInfo = "gotjson"
+        }
     }
-    struct Endpoint {
-        static let battleInfo = "gotjson"
+}
+
+// MARK: - Battle
+extension Constants {
+    //https://stackoverflow.com/a/46767132/2776045 - I keep getting nested type viloation from SwiftLint - Discuss
+    struct Battle {
+    struct AttackerOutcome {
+            static let win = "win"
+        }
+    }
+}
+
+// MARK: - Score
+extension Constants {
+    struct ELO {
+        static let initalRating = 1000
     }
 }

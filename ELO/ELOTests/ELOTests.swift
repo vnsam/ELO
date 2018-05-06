@@ -31,11 +31,22 @@ class ELOTests: XCTestCase {
     func testJSONObjectsDecode() {
         guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
             let data = try? Data.init(contentsOf: jsonPath) else {
-            XCTAssert(false, "JSON file not present in the path specified")
+            XCTAssert(false, "JSON file not present in the path specified || DATA is nil")
                 return
         }
         let decoder = JSONDecoder.init()
         let battles = try? decoder.decode([Battle].self, from: data)
+        XCTAssert(nil != battles)
+    }
+    func testDummyFunction() {
+        guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
+            let data = try? Data.init(contentsOf: jsonPath) else {
+                XCTAssert(false, "JSON file not present in the path specified || DATA is nil")
+                return
+        }
+        let decoder = JSONDecoder.init()
+        let battles = try? decoder.decode([Battle].self, from: data)
+        mapKingToBattles(battles!)
         XCTAssert(nil != battles)
     }
 }

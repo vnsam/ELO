@@ -9,34 +9,65 @@
 import Foundation
 
 protocol BattleDetails {
-    var name: String { get }
-    var attackerking: String { get }
-    var defenderking: String { get }
-    var attackerOutcome: String { get }
-    var location: String { get }
-    var region: String { get }
+    var name: String { get set }
+    var attackerking: String { get set }
+    var defenderking: String { get set }
+    var attackerOutcome: String { get set }
+    var location: String { get set }
+    var region: String { get set }
 }
 
 class Battle: BattleDetails, Decodable {
     var name: String {
-        return attributes[CodingKeys.name.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.name.rawValue] as? String ?? ""
+        } set(value) {
+            self.name = value
+        }
     }
     var attackerking: String {
-        return attributes[CodingKeys.attackerking.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.attackerking.rawValue] as? String ?? ""
+        } set(value) {
+            self.attackerking = value
+        }
     }
     var defenderking: String {
-        return attributes[CodingKeys.defenderking.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.defenderking.rawValue] as? String ?? ""
+        } set(value) {
+            self.defenderking = value
+        }
     }
     var attackerOutcome: String {
-        return attributes[CodingKeys.attackeroutcome.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.attackeroutcome.rawValue] as? String ?? ""
+        } set(value) {
+            self.attackerOutcome = value
+        }
     }
     var location: String {
-        return attributes[CodingKeys.location.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.location.rawValue] as? String ?? ""
+        } set(value) {
+            self.location = value
+        }
     }
     var region: String {
-        return attributes[CodingKeys.region.rawValue] as? String ?? ""
+        get {
+            return attributes[CodingKeys.region.rawValue] as? String ?? ""
+        } set(value) {
+            self.region = value
+        }
     }
     fileprivate var attributes: [AnyHashable: Any?]
+    // FIXME: - attackerKing, defenderKing - should be a part of BattleInfo protocol. (todo)
+    fileprivate var attackerKing: King {
+        return King.init(name: attributes[CodingKeys.attackerking.rawValue] as? String ?? "")
+    }
+    fileprivate var defenderKing: King {
+        return King.init(name: attributes[CodingKeys.defenderking.rawValue] as? String ?? "")
+    }
     // MARK: - Init
     init(attributes: [AnyHashable: Any?]) {
         self.attributes = attributes
