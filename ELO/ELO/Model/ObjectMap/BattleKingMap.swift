@@ -17,7 +17,6 @@ class BattleKingMap {
          */
         let uniqueKingNames = Set.init(attackerKingNames + defenderKingNames).filter { $0.count > 0 }
         let uniqueKings = Array.init(uniqueKingNames).map { King.init(name: $0) }
-        debugPrint("Filtered unique Kings: \(uniqueKings.map { $0.name })")
         for battle in battles {
             if let attackerKing = uniqueKings.filter ({ $0.name == battle.attackerking }).first,
                 let defenderKing = uniqueKings.filter ({ $0.name == battle.defenderking }).first  {
@@ -34,8 +33,8 @@ class BattleKingMap {
                     attackerKing.battlesLost += 1
                 }
                 // Attacks, Defenses
-                attackerKing.defenses += 1
-                defenderKing.attacks += 1
+                attackerKing.attacks += 1
+                defenderKing.defenses += 1
                 // Elo Score
                 attackerKing.eloScore = ELOCalculator
                     .calculate(opponentScore: defenderKing.eloScore,
@@ -45,8 +44,7 @@ class BattleKingMap {
                                wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
             }
             debugPrint("Finished parsing...")
-            return uniqueKings
             }
-        return nil
+        return uniqueKings
     }
 }

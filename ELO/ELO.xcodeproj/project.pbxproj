@@ -617,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_UNIFDEF_FLAGS = DEBUG;
 				DEVELOPMENT_TEAM = T2QG6B4259;
 				INFOPLIST_FILE = ELO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

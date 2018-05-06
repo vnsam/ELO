@@ -70,7 +70,7 @@ extension KingBattleViewModel {
             attributes[Constants.Cell.Attributes.losses] = "\(king.battlesLost)"
             attributes[Constants.Cell.Attributes.attacks] = "\(king.attacks)"
             attributes[Constants.Cell.Attributes.defenses] = "\(king.defenses)"
-
+            
             viewModel.setAttributes(attributes)
             
             cellViewModels.append(viewModel)
