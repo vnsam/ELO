@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868379209EC05E00D0676A /* BattleViewController.swift */; };
 		CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */; };
-		CC868380209EC2F500D0676A /* URLResponse+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */; };
 		CC868383209EC93500D0676A /* BattleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868382209EC93500D0676A /* BattleParser.swift */; };
-		CC868385209EC9AB00D0676A /* JSONDecoder+new.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */; };
+		CC868385209EC9AB00D0676A /* CustomJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */; };
 		CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE734209E4E280061695E /* BattleInfoService.swift */; };
 		CC9AE738209E4F090061695E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE737209E4F090061695E /* Constants.swift */; };
 		CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */; };
@@ -48,9 +47,8 @@
 /* Begin PBXFileReference section */
 		CC868379209EC05E00D0676A /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingBattleViewModel.swift; sourceTree = "<group>"; };
-		CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+StatusCode.swift"; sourceTree = "<group>"; };
 		CC868382209EC93500D0676A /* BattleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleParser.swift; sourceTree = "<group>"; };
-		CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+new.swift"; sourceTree = "<group>"; };
+		CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJSONDecoder.swift; sourceTree = "<group>"; };
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -119,8 +117,7 @@
 		CC86837E209EC2E400D0676A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */,
-				CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */,
+				CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -418,8 +415,7 @@
 				CC9AE773209E9F0C0061695E /* KingDetails.swift in Sources */,
 				CC868383209EC93500D0676A /* BattleParser.swift in Sources */,
 				CC9AE76E209E640F0061695E /* BattleKingMap.swift in Sources */,
-				CC868380209EC2F500D0676A /* URLResponse+StatusCode.swift in Sources */,
-				CC868385209EC9AB00D0676A /* JSONDecoder+new.swift in Sources */,
+				CC868385209EC9AB00D0676A /* CustomJSONDecoder.swift in Sources */,
 				CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */,
 				CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */,
 				CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */,
