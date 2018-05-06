@@ -8,8 +8,10 @@
 
 import Foundation
 
+/*
+ Abstract: Formula from: https://en.wikipedia.org/wiki/Elo_rating_system
+*/
 class ELOCalculator {
     class func calculate() {
-        
     }
 }

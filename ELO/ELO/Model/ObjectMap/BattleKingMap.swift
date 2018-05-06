@@ -20,19 +20,19 @@ func mapKingToBattles(_ battles: [Battle]) {
                     return
         }
         //  Battles
-        attackerKing.battlesFought.append(battle)
-        defenderKing.battlesFought.append(battle)
+        attackerKing.addBattle(battle)
+        defenderKing.addBattle(battle)
         // Won, Lost
         if Constants.Battle.AttackerOutcome.win == battle.attackerOutcome {
-            attackerKing.won += 1
-            defenderKing.lost += 1
+            attackerKing.battlesWon += 1
+            defenderKing.battlesLost += 1
         } else {
-            defenderKing.won += 1
-            attackerKing.lost += 1
+            defenderKing.battlesWon += 1
+            attackerKing.battlesLost += 1
         }
         // Attacks, Defenses
-        attackerKing.numberOFDefenses += 1
-        defenderKing.numberOfAttacks += 1
+        attackerKing.defenses += 1
+        defenderKing.attacks += 1
     }
     debugPrint("Finished parsing...")
 }

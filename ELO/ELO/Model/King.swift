@@ -8,44 +8,58 @@
 
 import Foundation
 
-protocol KingDetails {
-    var name: String { get }
-    var battlesWon: Int { get }
-    var battlesLost: Int { get }
-    var totalOpponents: Int { get } // You might not need this each battle will have an opponent - Clarify
-    var battles: [Battle] { get }
-    var attacks: Int { get }
-    var defenses: Int { get }
-}
-
 class King: KingDetails {
     var name: String = ""
     var battlesWon: Int {
-        return won
+        get {
+            return won
+        } set(value) {
+            self.won = value
+        }
     }
     var battlesLost: Int {
-        return lost
+        get {
+            return lost
+        } set(value) {
+            self.lost = value
+        }
     }
     var totalOpponents: Int {
         return battles.count // Follow up on the comment above
     }
     var battles: [Battle] {
-        return battlesFought
+        get {
+            return battlesFought
+        } set(value) {
+            self.battles = value
+        }
     }
     var attacks: Int {
-        return numberOfAttacks
+        get {
+            return numberOfAttacks
+        } set(value) {
+            self.numberOfAttacks = value
+        }
     }
     var defenses: Int {
-        return numberOFDefenses
+        get {
+            return numberOFDefenses
+        } set(value) {
+            self.numberOFDefenses = value
+        }
     }
     // MARK: - Properties
-    var won = 0
-    var lost = 0
-    var battlesFought: [Battle] = []
-    var numberOfAttacks: Int = 0
-    var numberOFDefenses: Int = 0
+    private var won = 0
+    private var lost = 0
+    private var battlesFought: [Battle] = []
+    private var numberOfAttacks: Int = 0
+    private var numberOFDefenses: Int = 0
     // MARK: - Init
     init(name: String) {
         self.name = name
+    }
+    // MARK: - Setters
+    func addBattle(_ battle: Battle) {
+        self.battlesFought.append(battle)
     }
 }

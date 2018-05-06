@@ -8,15 +8,6 @@
 
 import Foundation
 
-protocol BattleDetails {
-    var name: String { get set }
-    var attackerking: String { get set }
-    var defenderking: String { get set }
-    var attackerOutcome: String { get set }
-    var location: String { get set }
-    var region: String { get set }
-}
-
 class Battle: BattleDetails, Decodable {
     var name: String {
         get {
@@ -29,39 +20,42 @@ class Battle: BattleDetails, Decodable {
         get {
             return attributes[CodingKeys.attackerking.rawValue] as? String ?? ""
         } set(value) {
-            self.attackerking = value
+            self.attributes[CodingKeys.region.rawValue] = value
         }
     }
     var defenderking: String {
         get {
             return attributes[CodingKeys.defenderking.rawValue] as? String ?? ""
         } set(value) {
-            self.defenderking = value
+            self.attributes[CodingKeys.defenderking.rawValue] = value
         }
     }
     var attackerOutcome: String {
         get {
             return attributes[CodingKeys.attackeroutcome.rawValue] as? String ?? ""
         } set(value) {
-            self.attackerOutcome = value
+            self.attributes[CodingKeys.attackeroutcome.rawValue] = value
         }
     }
     var location: String {
         get {
             return attributes[CodingKeys.location.rawValue] as? String ?? ""
         } set(value) {
-            self.location = value
+            self.attributes[CodingKeys.location.rawValue] = value
         }
     }
     var region: String {
         get {
             return attributes[CodingKeys.region.rawValue] as? String ?? ""
         } set(value) {
-            self.region = value
+            self.attributes[CodingKeys.region.rawValue] = value
         }
     }
     fileprivate var attributes: [AnyHashable: Any?]
     // FIXME: - attackerKing, defenderKing - should be a part of BattleInfo protocol. (todo)
+    /*
+     Do you really need it here? 
+    */
     fileprivate var attackerKing: King {
         return King.init(name: attributes[CodingKeys.attackerking.rawValue] as? String ?? "")
     }
