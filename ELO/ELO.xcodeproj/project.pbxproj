@@ -130,8 +130,7 @@
 			children = (
 				CC868382209EC93500D0676A /* BattleParser.swift */,
 			);
-			name = Parser;
-			path = Components/Parser;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		CC9AE733209E4E0F0061695E /* NetworkService */ = {
@@ -233,7 +232,6 @@
 		CCEA84A5209DEC86000E8AB1 /* ELO */ = {
 			isa = PBXGroup;
 			children = (
-				CC868381209EC92300D0676A /* Parser */,
 				CC86837E209EC2E400D0676A /* Extension */,
 				CC868378209EC05E00D0676A /* ViewController */,
 				CC86837A209EC05E00D0676A /* ViewModel */,
@@ -264,6 +262,7 @@
 		CCF5DE72209EB66000733596 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CC868381209EC92300D0676A /* Parser */,
 				CCF5DE73209EB66000733596 /* ImageMapper */,
 			);
 			path = Components;

@@ -19,33 +19,34 @@ class BattleKingMap {
         let uniqueKings = Array.init(uniqueKingNames).map { King.init(name: $0) }
         debugPrint("Filtered unique Kings: \(uniqueKings.map { $0.name })")
         for battle in battles {
-            guard let attackerKing = uniqueKings.filter ({ $0.name == battle.attackerking }).first,
-                let defenderKing = uniqueKings.filter ({ $0.name == battle.defenderking }).first else {
-                    return nil
+            if let attackerKing = uniqueKings.filter ({ $0.name == battle.attackerking }).first,
+                let defenderKing = uniqueKings.filter ({ $0.name == battle.defenderking }).first  {
+             
+                //  Battles
+                attackerKing.addBattle(battle)
+                defenderKing.addBattle(battle)
+                // Won, Lost
+                if Constants.Battle.AttackerOutcome.win == battle.attackerOutcome {
+                    attackerKing.battlesWon += 1
+                    defenderKing.battlesLost += 1
+                } else {
+                    defenderKing.battlesWon += 1
+                    attackerKing.battlesLost += 1
+                }
+                // Attacks, Defenses
+                attackerKing.defenses += 1
+                defenderKing.attacks += 1
+                // Elo Score
+                attackerKing.eloScore = ELOCalculator
+                    .calculate(opponentScore: defenderKing.eloScore,
+                               wins: defenderKing.battlesWon, losses: defenderKing.battlesLost)
+                defenderKing.eloScore = ELOCalculator
+                    .calculate(opponentScore: attackerKing.eloScore,
+                               wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
             }
-            //  Battles
-            attackerKing.addBattle(battle)
-            defenderKing.addBattle(battle)
-            // Won, Lost
-            if Constants.Battle.AttackerOutcome.win == battle.attackerOutcome {
-                attackerKing.battlesWon += 1
-                defenderKing.battlesLost += 1
-            } else {
-                defenderKing.battlesWon += 1
-                attackerKing.battlesLost += 1
+            debugPrint("Finished parsing...")
+            return uniqueKings
             }
-            // Attacks, Defenses
-            attackerKing.defenses += 1
-            defenderKing.attacks += 1
-            // Elo Score
-            attackerKing.eloScore = ELOCalculator
-                .calculate(opponentScore: defenderKing.eloScore,
-                           wins: defenderKing.battlesWon, losses: defenderKing.battlesLost)
-            defenderKing.eloScore = ELOCalculator
-                .calculate(opponentScore: attackerKing.eloScore,
-                           wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
-        }
-        debugPrint("Finished parsing...")
-        return uniqueKings
+        return nil
     }
 }

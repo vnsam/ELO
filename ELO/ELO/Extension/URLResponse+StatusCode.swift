@@ -9,7 +9,5 @@
 import Foundation
 
 extension URLResponse {
-    var statusCode: Int? {
-        return (self as? HTTPURLResponse)?.statusCode
-    }
+    
 }

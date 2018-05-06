@@ -23,7 +23,7 @@ extension KingBattleViewModel {
                 debugPrint("Error fetching the battle info: \(String(describing: error?.localizedDescription)) -- @ \(#function, #line)")
             }
             guard let urlResponse = response,
-                let statusCode = urlResponse.statusCode else { return }
+                let statusCode = (urlResponse as? HTTPURLResponse)?.statusCode else { return }
             if nil != data && Constants.Network.Status.OK == statusCode {
                 if let battles = BattleParser.getBattlesFromData(data!),
                     let kings = BattleKingMap.mapKingToBattles(battles) {
