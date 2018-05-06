@@ -53,6 +53,7 @@
 		CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJSONDecoder.swift; sourceTree = "<group>"; };
 		CC868387209ED73A00D0676A /* KingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTableViewCell.swift; sourceTree = "<group>"; };
 		CC868389209ED77200D0676A /* KingListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingListCellViewModel.swift; sourceTree = "<group>"; };
+		CC86838B209EE13600D0676A /* ELO-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELO-BridgingHeader.h"; sourceTree = "<group>"; };
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 		CCEA849A209DEC86000E8AB1 = {
 			isa = PBXGroup;
 			children = (
+				CC86838B209EE13600D0676A /* ELO-BridgingHeader.h */,
 				CCEA84A5209DEC86000E8AB1 /* ELO */,
 				CC9AE75D209E51940061695E /* ELOTests */,
 				CCEA84A4209DEC86000E8AB1 /* Products */,
@@ -620,6 +622,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vn.org.ELO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ELO-BridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -635,6 +638,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vn.org.ELO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ELO-BridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

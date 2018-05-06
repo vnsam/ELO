@@ -11,12 +11,10 @@ import UIKit
 
 class KingBattleViewModel: NSObject {
     // MARK: - Properties
-    fileprivate (set) var kings: [King] = [] {
-        didSet {
-            setCellViewModels()
-        }
-    }
+    fileprivate (set) var kings: [King] = []
     fileprivate (set)  var cellViewModels: [KingListViewModel] = []
+    
+    var tableView: UITableView?
 }
 
 // MARK: - Networking function + related
@@ -24,7 +22,14 @@ extension KingBattleViewModel {
     func fetchBattleDetails() {
         guard let urlRequest = getUrlRequestForBattleDetails() else { return }
         let battleInfoService = BattleInfoService()
+        
+        SVProgressHUD.show()
+        
         battleInfoService.executeRequest(urlRequest) { (data, response, error) in
+            SVProgressHUD.dismiss()
+            
+            weak var weakSelf = self
+            
             if nil != error {
                 debugPrint("Error fetching the battle info: \(String(describing: error?.localizedDescription)) -- @ \(#function, #line)")
             }
@@ -33,7 +38,9 @@ extension KingBattleViewModel {
             if nil != data && Constants.Network.Status.OK == statusCode {
                 if let battles = BattleParser.getBattlesFromData(data!),
                     let kings = BattleKingMap.mapKingToBattles(battles) {
-                    self.kings = kings // Append
+                    weakSelf?.kings = kings // Append
+                    
+                    weakSelf?.updateUI()
                 }
             }
         }
@@ -61,11 +68,12 @@ extension KingBattleViewModel {
             attributes[Constants.Cell.Attributes.losses] = "\(king.battlesLost)"
             attributes[Constants.Cell.Attributes.attacks] = "\(king.attacks)"
             attributes[Constants.Cell.Attributes.defenses] = "\(king.defenses)"
-            
+
             viewModel.setAttributes(attributes)
             
             cellViewModels.append(viewModel)
         }
+        debugPrint("")
     }
 }
 
@@ -82,9 +90,23 @@ extension KingBattleViewModel: UITableViewDataSource {
     }
 }
 
-// MARK: -
+// MARK: - UITableViewDelegate
 extension KingBattleViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         debugPrint(#function)
+    }
+}
+
+// MARK:- UI Refresh
+extension KingBattleViewModel {
+    fileprivate func updateUI() {
+        setCellViewModels()
+        reloadTable()
+    }
+    
+    fileprivate func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+        }
     }
 }
