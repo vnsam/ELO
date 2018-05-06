@@ -44,3 +44,17 @@ extension Constants {
         static let factor: Double = 400.0
     }
 }
+
+// MARK: - Cell
+extension Constants {
+    struct Cell {
+        struct Attributes {
+            static let kingName = "kingName"
+            static let eloScore = "eloScore"
+            static let wins = "wins"
+            static let losses = "losses"
+            static let attacks = "attacks"
+            static let defenses = "defenses"
+        }
+    }
+}

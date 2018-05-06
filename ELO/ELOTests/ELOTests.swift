@@ -124,16 +124,4 @@ class ELOTests: XCTestCase {
         let battles = BattleParser.getBattlesFromData(data)
         XCTAssert((nil != battles && battles!.count > 0), "Parsed battles")
     }
-    
-    /*
-    Test View Model for Kings
-    */
-    func testViewModelForKings() {
-        let kingBattleViewModel = KingBattleViewModel.init()
-        kingBattleViewModel.fetchBattleDetails()
-        
-        let kings = kingBattleViewModel.kings
-        
-        XCTAssertTrue(kings.count > 0)
-    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class ImageMapper {
-    let imageDicationary: [String: String] = ["Renly Baratheon": "Renly",
+   static let imageDicationary: [String: String] = ["Renly Baratheon": "Renly",
                                               "Mance Rayder": "Mance",
                                               "Stannis Baratheon": "Stannis",
                                               "Balon/Euron Greyjoy": "Greyjoy",

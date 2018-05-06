@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class KingBattleViewModel: NSObject {
     // MARK: - Properties
-    fileprivate (set) var kings: [King] = []
+    fileprivate (set) var kings: [King] = [] {
+        didSet {
+            setCellViewModels()
+        }
+    }
+    fileprivate (set)  var cellViewModels: [KingListViewModel] = []
 }
 
 // MARK: - Networking function + related
@@ -40,5 +46,45 @@ extension KingBattleViewModel {
             return urlRequest
         }
         return nil
+    }
+}
+
+// MARK: - Cell View Model
+extension KingBattleViewModel {
+    fileprivate func setCellViewModels() {
+        for king in kings {
+            let viewModel = KingListViewModel()
+            var attributes: [String: String] = [:]
+            attributes[Constants.Cell.Attributes.kingName] = king.name
+            attributes[Constants.Cell.Attributes.eloScore] = String(format: "%.2f", king.eloScore)
+            attributes[Constants.Cell.Attributes.wins] = "\(king.battlesWon)"
+            attributes[Constants.Cell.Attributes.losses] = "\(king.battlesLost)"
+            attributes[Constants.Cell.Attributes.attacks] = "\(king.attacks)"
+            attributes[Constants.Cell.Attributes.defenses] = "\(king.defenses)"
+            
+            viewModel.setAttributes(attributes)
+            
+            cellViewModels.append(viewModel)
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension KingBattleViewModel: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: KingTableViewCell.self)) as! KingTableViewCell
+        cell.setViewModel(cellViewModels[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: -
+extension KingBattleViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        debugPrint(#function)
     }
 }

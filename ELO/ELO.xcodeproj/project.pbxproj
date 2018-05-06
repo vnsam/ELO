@@ -11,6 +11,8 @@
 		CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */; };
 		CC868383209EC93500D0676A /* BattleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868382209EC93500D0676A /* BattleParser.swift */; };
 		CC868385209EC9AB00D0676A /* CustomJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */; };
+		CC868388209ED73A00D0676A /* KingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868387209ED73A00D0676A /* KingTableViewCell.swift */; };
+		CC86838A209ED77200D0676A /* KingListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868389209ED77200D0676A /* KingListCellViewModel.swift */; };
 		CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE734209E4E280061695E /* BattleInfoService.swift */; };
 		CC9AE738209E4F090061695E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE737209E4F090061695E /* Constants.swift */; };
 		CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */; };
@@ -49,6 +51,8 @@
 		CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingBattleViewModel.swift; sourceTree = "<group>"; };
 		CC868382209EC93500D0676A /* BattleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleParser.swift; sourceTree = "<group>"; };
 		CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJSONDecoder.swift; sourceTree = "<group>"; };
+		CC868387209ED73A00D0676A /* KingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTableViewCell.swift; sourceTree = "<group>"; };
+		CC868389209ED77200D0676A /* KingListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingListCellViewModel.swift; sourceTree = "<group>"; };
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */,
+				CC868389209ED77200D0676A /* KingListCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -128,6 +133,14 @@
 				CC868382209EC93500D0676A /* BattleParser.swift */,
 			);
 			path = Parser;
+			sourceTree = "<group>";
+		};
+		CC868386209ED70800D0676A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC868387209ED73A00D0676A /* KingTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CC9AE733209E4E0F0061695E /* NetworkService */ = {
@@ -230,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				CC86837E209EC2E400D0676A /* Extension */,
+				CC868386209ED70800D0676A /* Views */,
 				CC868378209EC05E00D0676A /* ViewController */,
 				CC86837A209EC05E00D0676A /* ViewModel */,
 				CCF5DE72209EB66000733596 /* Components */,
@@ -405,7 +419,9 @@
 			files = (
 				CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */,
 				CC9AE771209E82D70061695E /* ELOCalculator.swift in Sources */,
+				CC868388209ED73A00D0676A /* KingTableViewCell.swift in Sources */,
 				CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */,
+				CC86838A209ED77200D0676A /* KingListCellViewModel.swift in Sources */,
 				CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */,
 				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
 				CCF5DE75209EB67100733596 /* ImageMapper.swift in Sources */,
