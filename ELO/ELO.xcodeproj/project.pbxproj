@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868379209EC05E00D0676A /* BattleViewController.swift */; };
+		CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */; };
+		CC868380209EC2F500D0676A /* URLResponse+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */; };
+		CC868383209EC93500D0676A /* BattleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868382209EC93500D0676A /* BattleParser.swift */; };
+		CC868385209EC9AB00D0676A /* JSONDecoder+new.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */; };
 		CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE734209E4E280061695E /* BattleInfoService.swift */; };
 		CC9AE738209E4F090061695E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE737209E4F090061695E /* Constants.swift */; };
 		CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */; };
@@ -22,7 +27,6 @@
 		CC9AE773209E9F0C0061695E /* KingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE772209E9F0B0061695E /* KingDetails.swift */; };
 		CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE774209E9F350061695E /* BattleDetails.swift */; };
 		CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */; };
-		CCEA84A9209DEC86000E8AB1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */; };
 		CCEA84AC209DEC86000E8AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AA209DEC86000E8AB1 /* Main.storyboard */; };
 		CCEA84AE209DEC86000E8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */; };
 		CCEA84B1209DEC86000E8AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEA84AF209DEC86000E8AB1 /* LaunchScreen.storyboard */; };
@@ -42,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC868379209EC05E00D0676A /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingBattleViewModel.swift; sourceTree = "<group>"; };
+		CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+StatusCode.swift"; sourceTree = "<group>"; };
+		CC868382209EC93500D0676A /* BattleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleParser.swift; sourceTree = "<group>"; };
+		CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+new.swift"; sourceTree = "<group>"; };
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -64,7 +73,6 @@
 		CC9AE774209E9F350061695E /* BattleDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleDetails.swift; sourceTree = "<group>"; };
 		CCEA84A3209DEC86000E8AB1 /* ELO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		CCEA84AB209DEC86000E8AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEA84B0209DEC86000E8AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +100,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC868378209EC05E00D0676A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC868379209EC05E00D0676A /* BattleViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CC86837A209EC05E00D0676A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CC86837E209EC2E400D0676A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CC86837F209EC2F500D0676A /* URLResponse+StatusCode.swift */,
+				CC868384209EC9AB00D0676A /* JSONDecoder+new.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CC868381209EC92300D0676A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				CC868382209EC93500D0676A /* BattleParser.swift */,
+			);
+			name = Parser;
+			path = Components/Parser;
+			sourceTree = "<group>";
+		};
 		CC9AE733209E4E0F0061695E /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,11 +233,14 @@
 		CCEA84A5209DEC86000E8AB1 /* ELO */ = {
 			isa = PBXGroup;
 			children = (
+				CC868381209EC92300D0676A /* Parser */,
+				CC86837E209EC2E400D0676A /* Extension */,
+				CC868378209EC05E00D0676A /* ViewController */,
+				CC86837A209EC05E00D0676A /* ViewModel */,
 				CCF5DE72209EB66000733596 /* Components */,
 				CC9AE76F209E82CB0061695E /* Calculator */,
 				CC9AE766209E527D0061695E /* Model */,
 				CCEA84A6209DEC86000E8AB1 /* AppDelegate.swift */,
-				CCEA84A8209DEC86000E8AB1 /* BattleViewController.swift */,
 				CCEA84AA209DEC86000E8AB1 /* Main.storyboard */,
 				CC9AE736209E4EFA0061695E /* Constants */,
 				CC9AE748209E51380061695E /* Libraries */,
@@ -345,7 +390,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -362,16 +407,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */,
 				CC9AE771209E82D70061695E /* ELOCalculator.swift in Sources */,
+				CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */,
 				CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */,
 				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
-				CCEA84A9209DEC86000E8AB1 /* BattleViewController.swift in Sources */,
 				CCF5DE75209EB67100733596 /* ImageMapper.swift in Sources */,
 				CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */,
 				CC9AE768209E52870061695E /* Battle.swift in Sources */,
 				CC9AE76B209E5EC90061695E /* King.swift in Sources */,
 				CC9AE773209E9F0C0061695E /* KingDetails.swift in Sources */,
+				CC868383209EC93500D0676A /* BattleParser.swift in Sources */,
 				CC9AE76E209E640F0061695E /* BattleKingMap.swift in Sources */,
+				CC868380209EC2F500D0676A /* URLResponse+StatusCode.swift in Sources */,
+				CC868385209EC9AB00D0676A /* JSONDecoder+new.swift in Sources */,
 				CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */,
 				CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */,
 				CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */,

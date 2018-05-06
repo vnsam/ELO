@@ -61,7 +61,7 @@ class ELOTests: XCTestCase {
         }
         let decoder = JSONDecoder.init()
         let battles = try? decoder.decode([Battle].self, from: data)
-        _ = mapKingToBattles(battles!)
+        _ = BattleKingMap.mapKingToBattles(battles!)
         XCTAssert(nil != battles)
     }
     /*
@@ -90,7 +90,7 @@ class ELOTests: XCTestCase {
         let battleTwo = Battle.init(attributes: secondBattleAttributes)
         let battleThree = Battle.init(attributes: thirdBattleAttributes)
         let battles = [battleOne, battleTwo, battleThree]
-        if let kings = mapKingToBattles(battles),
+        if let kings = BattleKingMap.mapKingToBattles(battles),
             let lastKing = kings.last {
             XCTAssert((lastKing.battlesWon + lastKing.battlesLost) == lastKing.battles.count, "Battle count matches")
         } else {
@@ -110,5 +110,30 @@ class ELOTests: XCTestCase {
         let battle = Battle.init(attributes: battleAttributes)
         let king = King.init(name: battle.attackerking)
         XCTAssertEqual(battle.attackerking, king.name)
+    }
+    
+    /*
+    Test battle parser
+    */
+    func testBattleParser() {
+        guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
+            let data = try? Data.init(contentsOf: jsonPath) else {
+                XCTAssert(false, "JSON file not present in the path specified || DATA is nil")
+                return
+        }
+        let battles = BattleParser.getBattlesFromData(data)
+        XCTAssert((nil != battles && battles!.count > 0), "Parsed battles")
+    }
+    
+    /*
+    Test View Model for Kings
+    */
+    func testViewModelForKings() {
+        let kingBattleViewModel = KingBattleViewModel.init()
+        kingBattleViewModel.fetchBattleDetails()
+        
+        let kings = kingBattleViewModel.kings
+        
+        XCTAssertTrue(kings.count > 0)
     }
 }

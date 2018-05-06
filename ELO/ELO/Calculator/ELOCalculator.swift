@@ -15,7 +15,8 @@ class ELOCalculator {
     class func calculate(opponentScore: Double, wins: Int, losses: Int) -> Double {
         //  Wins + Loses ==> Number of games 
         let performanceScore = (opponentScore + Constants.ELO.factor)
-            * Double((wins - losses)) / Double((wins + losses)).rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero)
+            * Double((wins - losses)) / Double((wins + losses))
+                .rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero)
         return performanceScore
     }
 }

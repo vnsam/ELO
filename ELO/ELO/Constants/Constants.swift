@@ -18,6 +18,12 @@ extension Constants {
         struct Endpoint {
             static let battleInfo = "gotjson"
         }
+        struct HttpMethod {
+            static let get = "GET"
+        }
+        struct Status {
+            static let OK = 200
+        }
     }
 }
 
