@@ -13,6 +13,10 @@
 		CC868385209EC9AB00D0676A /* CustomJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868384209EC9AB00D0676A /* CustomJSONDecoder.swift */; };
 		CC868388209ED73A00D0676A /* KingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868387209ED73A00D0676A /* KingTableViewCell.swift */; };
 		CC86838A209ED77200D0676A /* KingListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868389209ED77200D0676A /* KingListCellViewModel.swift */; };
+		CC86838D209F06F700D0676A /* KingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86838C209F06F700D0676A /* KingDetailViewModel.swift */; };
+		CC86838F209F082D00D0676A /* KingDetailParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86838E209F082D00D0676A /* KingDetailParser.swift */; };
+		CC868391209F0D9000D0676A /* KingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868390209F0D9000D0676A /* KingDetailViewController.swift */; };
+		CC868393209F0DF400D0676A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868392209F0DF400D0676A /* Storyboard.swift */; };
 		CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE734209E4E280061695E /* BattleInfoService.swift */; };
 		CC9AE738209E4F090061695E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE737209E4F090061695E /* Constants.swift */; };
 		CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9AE74B209E51380061695E /* SVIndefiniteAnimatedView.m */; };
@@ -54,6 +58,10 @@
 		CC868387209ED73A00D0676A /* KingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTableViewCell.swift; sourceTree = "<group>"; };
 		CC868389209ED77200D0676A /* KingListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingListCellViewModel.swift; sourceTree = "<group>"; };
 		CC86838B209EE13600D0676A /* ELO-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELO-BridgingHeader.h"; sourceTree = "<group>"; };
+		CC86838C209F06F700D0676A /* KingDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingDetailViewModel.swift; sourceTree = "<group>"; };
+		CC86838E209F082D00D0676A /* KingDetailParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingDetailParser.swift; sourceTree = "<group>"; };
+		CC868390209F0D9000D0676A /* KingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingDetailViewController.swift; sourceTree = "<group>"; };
+		CC868392209F0DF400D0676A /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		CC9AE734209E4E280061695E /* BattleInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleInfoService.swift; sourceTree = "<group>"; };
 		CC9AE737209E4F090061695E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CC9AE74A209E51380061695E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				CC868379209EC05E00D0676A /* BattleViewController.swift */,
+				CC868390209F0D9000D0676A /* KingDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -115,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */,
+				CC86838C209F06F700D0676A /* KingDetailViewModel.swift */,
 				CC868389209ED77200D0676A /* KingListCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -132,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				CC868382209EC93500D0676A /* BattleParser.swift */,
+				CC86838E209F082D00D0676A /* KingDetailParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -277,6 +288,7 @@
 			children = (
 				CC868381209EC92300D0676A /* Parser */,
 				CCF5DE73209EB66000733596 /* ImageMapper */,
+				CC868392209F0DF400D0676A /* Storyboard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -427,6 +439,7 @@
 				CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */,
 				CC9AE753209E51380061695E /* SVIndefiniteAnimatedView.m in Sources */,
 				CCF5DE75209EB67100733596 /* ImageMapper.swift in Sources */,
+				CC86838D209F06F700D0676A /* KingDetailViewModel.swift in Sources */,
 				CCEA84A7209DEC86000E8AB1 /* AppDelegate.swift in Sources */,
 				CC9AE768209E52870061695E /* Battle.swift in Sources */,
 				CC9AE76B209E5EC90061695E /* King.swift in Sources */,
@@ -434,9 +447,12 @@
 				CC868383209EC93500D0676A /* BattleParser.swift in Sources */,
 				CC9AE76E209E640F0061695E /* BattleKingMap.swift in Sources */,
 				CC868385209EC9AB00D0676A /* CustomJSONDecoder.swift in Sources */,
+				CC86838F209F082D00D0676A /* KingDetailParser.swift in Sources */,
 				CC9AE757209E51380061695E /* SVRadialGradientLayer.m in Sources */,
 				CC9AE756209E51380061695E /* SVProgressHUD.m in Sources */,
 				CCF5DE71209EA08B00733596 /* BattleScore.swift in Sources */,
+				CC868391209F0D9000D0676A /* KingDetailViewController.swift in Sources */,
+				CC868393209F0DF400D0676A /* Storyboard.swift in Sources */,
 				CC9AE735209E4E280061695E /* BattleInfoService.swift in Sources */,
 				CC9AE738209E4F090061695E /* Constants.swift in Sources */,
 				CC9AE754209E51380061695E /* SVProgressAnimatedView.m in Sources */,

@@ -176,7 +176,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Game of Thrones | Kings" id="CM1-um-PmF"/>
+                    <navigationItem key="navigationItem" title="Game of Thrones | Kings" leftItemsSupplementBackButton="YES" id="CM1-um-PmF">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="47n-Tt-Hgp"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="291-Ww-NVH">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="3Ed-ag-epP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rMo-Bd-gJ3" id="Lh5-va-ftT"/>
                     </connections>
@@ -184,6 +191,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-72.799999999999997" y="-1.3493253373313345"/>
+        </scene>
+        <!--King Detail View Controller-->
+        <scene sceneID="0Ka-YP-2ZY">
+            <objects>
+                <viewController storyboardIdentifier="KingDetailViewController" id="uqf-jS-zYh" customClass="KingDetailViewController" customModule="ELO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a42-K2-WhG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brY-7X-vvS">
+                                <rect key="frame" x="162" y="64" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="8T9-Tf-bag"/>
+                                    <constraint firstAttribute="height" constant="50" id="omB-D6-Fmo"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-it-cQ3">
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kaG-it-cQ3" firstAttribute="top" secondItem="brY-7X-vvS" secondAttribute="bottom" constant="8" id="2H8-5e-I8B"/>
+                            <constraint firstItem="4R4-wo-0Hw" firstAttribute="trailing" secondItem="kaG-it-cQ3" secondAttribute="trailing" id="T7D-Qd-qCT"/>
+                            <constraint firstItem="brY-7X-vvS" firstAttribute="centerX" secondItem="a42-K2-WhG" secondAttribute="centerX" id="o0P-77-nMo"/>
+                            <constraint firstItem="brY-7X-vvS" firstAttribute="top" secondItem="4R4-wo-0Hw" secondAttribute="top" constant="44" id="q8s-zP-pOr"/>
+                            <constraint firstItem="4R4-wo-0Hw" firstAttribute="bottom" secondItem="kaG-it-cQ3" secondAttribute="bottom" id="tW9-97-2wi"/>
+                            <constraint firstItem="kaG-it-cQ3" firstAttribute="leading" secondItem="4R4-wo-0Hw" secondAttribute="leading" id="vGy-S7-D8h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4R4-wo-0Hw"/>
+                    </view>
+                    <connections>
+                        <outlet property="sigilImageView" destination="brY-7X-vvS" id="MFq-Ok-l9L"/>
+                        <outlet property="tableView" destination="kaG-it-cQ3" id="efu-uM-INP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQ0-0I-bmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aRO-PW-iAA">

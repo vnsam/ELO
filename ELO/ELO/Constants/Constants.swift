@@ -58,3 +58,25 @@ extension Constants {
         }
     }
 }
+
+// MARK: - KingDetail
+extension Constants {
+    struct KingDetail {
+        static let name = "name"
+        static let battles = "battles"
+    }
+}
+
+// MARK: - Segue Identifiers
+extension Constants {
+    struct SegueIdentifiers {
+        static let showKingDetails = "ShowKingDetail"
+    }
+}
+
+// MARK: - ViewController Identifiers
+extension Constants {
+    struct ViewController {
+        static let kingDetail = "KingDetailViewController"
+    }
+}

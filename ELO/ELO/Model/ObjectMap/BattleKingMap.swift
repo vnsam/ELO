@@ -43,7 +43,6 @@ class BattleKingMap {
                     .calculate(opponentScore: attackerKing.eloScore,
                                wins: attackerKing.battlesWon, losses: attackerKing.battlesLost)
             }
-            debugPrint("Finished parsing...")
             }
         return uniqueKings
     }

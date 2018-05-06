@@ -25,12 +25,9 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initiaLizeViewModel()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setupUI()
         
+        initiaLizeViewModel()
         initiateFetchBattleDetails()
     }
     
@@ -38,12 +35,31 @@ class BattleViewController: UIViewController {
     private func initiaLizeViewModel() {
         if nil == viewModel {
             viewModel = KingBattleViewModel()
+            
             tableView.delegate  = viewModel
             tableView.dataSource = viewModel
+            
             viewModel?.completion = {
                 self.reloadTable()
             }
+            
+            viewModel?.selected = { (king) in
+                self.navigateToKingDetails(king)
+            }
         }
+    }
+    
+    // MARK: - UI Action
+    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
+        refreshViewModel()
+    }
+    
+}
+
+// MARK: - UI Update
+extension BattleViewController {
+    fileprivate func setupUI() {
+        
     }
 }
 
@@ -60,5 +76,26 @@ extension BattleViewController {
 extension BattleViewController {
     func initiateFetchBattleDetails() {
         viewModel?.fetchBattleDetails()
+    }
+    
+    func refreshViewModel() {
+        viewModel = nil
+        
+        initiaLizeViewModel()
+        initiateFetchBattleDetails()
+    }
+}
+
+// MARK: - Navigation
+extension BattleViewController {
+    func navigateToKingDetails(_ king: King) {
+        let kingDetailViewModel = KingDetailViewModel.init()
+        kingDetailViewModel.setKing(king)
+        kingDetailViewModel.parseAttributes()
+        
+        let kingDetailViewController = KingDetailViewController.newInstance()
+        kingDetailViewController.setViewModel(kingDetailViewModel)
+        
+        self.navigationController?.pushViewController(kingDetailViewController, animated: true)
     }
 }

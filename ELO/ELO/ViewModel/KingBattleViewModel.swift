@@ -15,6 +15,7 @@ class KingBattleViewModel: NSObject {
     fileprivate (set)  var cellViewModels: [KingListViewModel] = []
     
     var completion: (() -> ()) = {}
+    var selected: ((King) -> ()) = {_ in }
 }
 
 // MARK: - Networking function + related
@@ -95,7 +96,8 @@ extension KingBattleViewModel: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension KingBattleViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint(#function)
+        let king = kings[indexPath.row]
+        sendSelectedKing(king)
     }
 }
 
@@ -103,5 +105,9 @@ extension KingBattleViewModel: UITableViewDelegate {
 extension KingBattleViewModel {
     fileprivate func sendCompletion() {
         completion()
+    }
+    
+    fileprivate func sendSelectedKing(_ king: King) {
+        selected(king)
     }
 }
