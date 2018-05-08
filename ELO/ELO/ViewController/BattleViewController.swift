@@ -40,6 +40,7 @@ class BattleViewController: UIViewController {
             tableView.dataSource = viewModel
             
             viewModel?.completion = {
+                SVProgressHUD.dismiss()
                 self.reloadTable()
             }
             
@@ -75,6 +76,7 @@ extension BattleViewController {
 // MARK: - DataSource
 extension BattleViewController {
     func initiateFetchBattleDetails() {
+        SVProgressHUD.show()
         viewModel?.fetchBattleDetails()
     }
     

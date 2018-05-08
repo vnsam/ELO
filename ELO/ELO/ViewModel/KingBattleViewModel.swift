@@ -22,13 +22,10 @@ class KingBattleViewModel: NSObject {
 extension KingBattleViewModel {
     func fetchBattleDetails() {
         guard let urlRequest = getUrlRequestForBattleDetails() else { return }
+        
         let battleInfoService = BattleInfoService()
         
-        SVProgressHUD.show()
-        
         battleInfoService.executeRequest(urlRequest) { (data, response, error) in
-            SVProgressHUD.dismiss()
-            
             weak var weakSelf = self
             
             if nil != error {
