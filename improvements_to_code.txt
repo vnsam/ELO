@@ -1,2 +1,14 @@
 1. Move UI delegates, datasource to ViewController
 2. rename - function --> reloadViewModel to 'flushViewModel'
+3. mapKingToBattles --> split each block unit into logical functions
+4. move network fetch to 'viewWillAppear' - it'll  fetch everytime it's shown
+
+
+//	More Improvements
+1. 'King' object should conform to a Genereic type.
+
+// Observations
+1. Init KingDetailViewModel - only if 'King' is provided
+2. navigateToKingDetails - block is reduced much
+3. Improve - 'navigateToKingDetails' function
+4. [weak self] instead of weak var self in -> in Network completion block

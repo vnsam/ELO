@@ -16,13 +16,18 @@ class KingDetailViewModel: NSObject {
         self.attributes = attributes
     }
     
-    func setKing(_ king: King) {
+    init(king: King) {
+        super.init()
         self.king = king
+        
+        updateAttributes()
     }
     
-    func parseAttributes() {
+    func updateAttributes() {
         if let king = self.king {
-            let attributes = KingDetailParser.getDetails(for: king)
+            
+            let attributes = KingDetailParser.parse(for: king)
+            
             setAttributes(attributes)
         }
     }
@@ -43,3 +48,4 @@ extension KingDetailViewModel: UITableViewDataSource {
     
     
 }
+

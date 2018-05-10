@@ -11,41 +11,44 @@ import UIKit
 class BattleViewController: UIViewController {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.estimatedRowHeight = 200.0
             tableView.rowHeight = UITableViewAutomaticDimension
+            
+            tableView.delegate = self
+            tableView.dataSource = self
         }
     }
     
     // MARK: - Properties
+    
     fileprivate(set) var viewModel: KingBattleViewModel?
     
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        
         initiaLizeViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         initiateFetchBattleDetails()
     }
     
     // MARK: - Custom Objects Intialization
+    
     private func initiaLizeViewModel() {
         if nil == viewModel {
             viewModel = KingBattleViewModel()
             
-            tableView.delegate  = viewModel
-            tableView.dataSource = viewModel
-            
-            viewModel?.completion = {
+            viewModel?.networkRequestCompletion = {
                 SVProgressHUD.dismiss()
                 self.reloadTable()
-            }
-            
-            viewModel?.selected = { (king) in
-                self.navigateToKingDetails(king)
             }
         }
     }
@@ -57,13 +60,6 @@ class BattleViewController: UIViewController {
     
 }
 
-// MARK: - UI Update
-extension BattleViewController {
-    fileprivate func setupUI() {
-        
-    }
-}
-
 // MARK: - UI refresh
 extension BattleViewController {
     fileprivate func reloadTable() {
@@ -72,6 +68,35 @@ extension BattleViewController {
         }
     }
 }
+
+// MARK: - UITableViewDataSource
+
+extension BattleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.numberOfKingListViewModels() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: KingTableViewCell.self)) as! KingTableViewCell
+        
+        let kingListViewModel = viewModel!.kingListViewModel(at: indexPath.row)
+        
+        cell.setViewModel(kingListViewModel)
+        
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension BattleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let king = viewModel!.kingViewModel(at: indexPath.row)
+        navigateToKingDetails(king)
+    }
+}
+
+
 
 // MARK: - DataSource
 extension BattleViewController {
@@ -91,9 +116,7 @@ extension BattleViewController {
 // MARK: - Navigation
 extension BattleViewController {
     func navigateToKingDetails(_ king: King) {
-        let kingDetailViewModel = KingDetailViewModel.init()
-        kingDetailViewModel.setKing(king)
-        kingDetailViewModel.parseAttributes()
+        let kingDetailViewModel = KingDetailViewModel(king: king)
         
         let kingDetailViewController = KingDetailViewController.newInstance()
         kingDetailViewController.setViewModel(kingDetailViewModel)
