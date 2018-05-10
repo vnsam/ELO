@@ -14,6 +14,9 @@ struct Constants {
 // MARK: - Network
 extension Constants {
     struct Network {
+        // timeout
+        static let timeoutInterval = 60.0
+        
         static let baseURL = "http://starlord.hackerearth.com/"
         struct Endpoint {
             static let battleInfo = "gotjson"

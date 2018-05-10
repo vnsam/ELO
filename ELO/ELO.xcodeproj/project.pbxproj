@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC01AEDE20A486580001B193 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01AEDD20A486580001B193 /* RequestBuilder.swift */; };
 		CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868379209EC05E00D0676A /* BattleViewController.swift */; };
 		CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */; };
 		CC868383209EC93500D0676A /* BattleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC868382209EC93500D0676A /* BattleParser.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC01AEDD20A486580001B193 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		CC868379209EC05E00D0676A /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		CC86837C209EC08B00D0676A /* KingBattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingBattleViewModel.swift; sourceTree = "<group>"; };
 		CC868382209EC93500D0676A /* BattleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleParser.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC01AEDC20A486460001B193 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC01AEDD20A486580001B193 /* RequestBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CC868378209EC05E00D0676A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +276,7 @@
 				CCEA84AA209DEC86000E8AB1 /* Main.storyboard */,
 				CC9AE736209E4EFA0061695E /* Constants */,
 				CC9AE748209E51380061695E /* Libraries */,
+				CC01AEDC20A486460001B193 /* Network */,
 				CC9AE733209E4E0F0061695E /* NetworkService */,
 				CCEA84B8209DED81000E8AB1 /* JSONStub */,
 				CCEA84AD209DEC86000E8AB1 /* Assets.xcassets */,
@@ -434,6 +445,7 @@
 				CC86837B209EC05E00D0676A /* BattleViewController.swift in Sources */,
 				CC9AE771209E82D70061695E /* ELOCalculator.swift in Sources */,
 				CC868388209ED73A00D0676A /* KingTableViewCell.swift in Sources */,
+				CC01AEDE20A486580001B193 /* RequestBuilder.swift in Sources */,
 				CC86837D209EC08B00D0676A /* KingBattleViewModel.swift in Sources */,
 				CC86838A209ED77200D0676A /* KingListCellViewModel.swift in Sources */,
 				CC9AE775209E9F350061695E /* BattleDetails.swift in Sources */,
