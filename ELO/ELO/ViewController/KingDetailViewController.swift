@@ -29,7 +29,6 @@ class KingDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setSigilImage()
     }
 }
 
@@ -49,6 +48,8 @@ extension KingDetailViewController {
 extension KingDetailViewController {
     fileprivate func setupUI() {
         self.title = NSLocalizedString("Battles Fought", comment: "Battles Fought")
+        
+        setSigilImage()
     }
 }
 
