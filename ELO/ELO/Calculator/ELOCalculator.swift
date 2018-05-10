@@ -12,14 +12,6 @@ import Foundation
  Abstract: Formula from: https://en.wikipedia.org/wiki/Elo_rating_system
 */
 class ELOCalculator {
-    class func calculate(opponentScore: Double, wins: Int, losses: Int) -> Double {
-        //  Wins + Loses ==> Number of games 
-        let performanceScore = (opponentScore + Constants.ELO.factor)
-            * Double((wins - losses)) / Double((wins + losses))
-                .rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero)
-        return performanceScore
-    }
-    
     class func update(attacker: King, defender: King, attackerWon: Bool) {
         var r1: Double = attacker.eloScore
         var r2: Double = defender.eloScore

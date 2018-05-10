@@ -11,9 +11,12 @@ import Foundation
 class KingDetailParser {
     class func parse(for king: King) -> [AnyHashable: Any] {
         var attributes: [AnyHashable: Any] = [:]
+        
         attributes[Constants.KingDetail.name] = king.name
+        
         let battles = king.battles.map { $0.name }
         attributes[Constants.KingDetail.battles] = battles
+        
         return attributes
     }
 }
