@@ -1,0 +1,2 @@
+1. Move UI delegates, datasource to ViewController
+2. rename - function --> reloadViewModel to 'flushViewModel'
