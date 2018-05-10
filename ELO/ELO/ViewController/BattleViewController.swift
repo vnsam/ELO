@@ -56,7 +56,12 @@ class BattleViewController: UIViewController {
     // MARK: - UI Action
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
+        refreshButtonAction()
+    }
+    
+    private func refreshButtonAction() {
         refreshViewModel()
+        initiateFetchBattleDetails()
     }
 }
 
@@ -109,9 +114,8 @@ extension BattleViewController {
     
     func refreshViewModel() {
         viewModel = nil
-        
+
         initiaLizeViewModel()
-        initiateFetchBattleDetails()
     }
 }
 
