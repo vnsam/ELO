@@ -84,7 +84,10 @@ extension BattleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: KingTableViewCell.self)) as! KingTableViewCell
-        
+        /*
+         viewModel! - viewModel is force unwrapped here, unless the viewModel is not nill,
+         we won't get to cell for row at index path
+         */
         let kingListViewModel = viewModel!.kingListViewModel(at: indexPath.row)
         
         cell.setViewModel(kingListViewModel)
