@@ -37,13 +37,16 @@ extension KingTableViewCell {
     }
     
     fileprivate func setAttributes() {
-        if let kingName = viewModel?.attributes[Constants.Cell.Attributes.kingName] {
+        
+        let attributes = viewModel?.attributes
+        
+        if let kingName = attributes?[Constants.Cell.Attributes.kingName] {
             sigilImageView.image = UIImage.init(named: (ImageMapper.imageDicationary[kingName])!)
             kingNameLabel.text = kingName
         }
-        scoreLabel.text = viewModel?.attributes[Constants.Cell.Attributes.eloScore]
-        winsLabel.text = viewModel?.attributes[Constants.Cell.Attributes.wins]
-        attacksLabel.text = viewModel?.attributes[Constants.Cell.Attributes.attacks]
-        defencesLabel.text = viewModel?.attributes[Constants.Cell.Attributes.defenses]
+        scoreLabel.text = attributes?[Constants.Cell.Attributes.eloScore]
+        winsLabel.text = attributes?[Constants.Cell.Attributes.wins]
+        attacksLabel.text = attributes?[Constants.Cell.Attributes.attacks]
+        defencesLabel.text = attributes?[Constants.Cell.Attributes.defenses]
     }
 }
