@@ -47,20 +47,21 @@ class BattleViewController: UIViewController {
             viewModel = KingBattleViewModel()
             
             viewModel?.networkRequestCompletion = {
-                SVProgressHUD.dismiss()
+                self.hideActivityIndicator()
                 self.reloadTable()
             }
         }
     }
     
     // MARK: - UI Action
+    
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         refreshViewModel()
     }
-    
 }
 
 // MARK: - UI refresh
+
 extension BattleViewController {
     fileprivate func reloadTable() {
         DispatchQueue.main.async {
@@ -99,9 +100,10 @@ extension BattleViewController: UITableViewDelegate {
 
 
 // MARK: - DataSource
+
 extension BattleViewController {
     func initiateFetchBattleDetails() {
-        SVProgressHUD.show()
+        showActivityIndicator()
         viewModel?.fetchBattleDetails()
     }
     
@@ -114,6 +116,7 @@ extension BattleViewController {
 }
 
 // MARK: - Navigation
+
 extension BattleViewController {
     func navigateToKingDetails(_ king: King) {
         let kingDetailViewModel = KingDetailViewModel(king: king)
@@ -122,5 +125,17 @@ extension BattleViewController {
         kingDetailViewController.setViewModel(kingDetailViewModel)
         
         self.navigationController?.pushViewController(kingDetailViewController, animated: true)
+    }
+}
+
+// MARK: - UI Handle
+
+extension BattleViewController {
+    fileprivate func showActivityIndicator() {
+        SVProgressHUD.show()
+    }
+    
+    fileprivate func hideActivityIndicator() {
+        SVProgressHUD.dismiss()
     }
 }

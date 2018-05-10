@@ -96,7 +96,7 @@ extension KingBattleViewModel {
     }
 }
 
-// MARK:- UI Refresh
+// MARK:- UI Refresh Completion
 
 extension KingBattleViewModel {
     fileprivate func sendCompletion() {

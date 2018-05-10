@@ -8,16 +8,16 @@
 
 import Foundation
 
-class KingDetailViewModel: NSObject {
+class KingDetailViewModel {
+    
+    // MARK: - Properties
+    
     fileprivate (set) var attributes: [AnyHashable: Any] = [:]
     fileprivate (set) var king: King?
     
-    func setAttributes(_ attributes: [AnyHashable: Any]) {
-        self.attributes = attributes
-    }
+    // MARK: - Intializer and
     
     init(king: King) {
-        super.init()
         self.king = king
         
         updateAttributes()
@@ -31,21 +31,8 @@ class KingDetailViewModel: NSObject {
             setAttributes(attributes)
         }
     }
-}
-
-// MARK:
-extension KingDetailViewModel: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (attributes[Constants.KingDetail.battles] as? [String])?.count ?? 0
+    
+    func setAttributes(_ attributes: [AnyHashable: Any]) {
+        self.attributes = attributes
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
-        let battleName = (attributes[Constants.KingDetail.battles] as! [String])[indexPath.row]
-        cell.textLabel?.text = battleName
-        return cell
-    }
-    
-    
 }
-

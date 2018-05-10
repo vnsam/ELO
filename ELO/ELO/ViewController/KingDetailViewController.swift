@@ -10,22 +10,31 @@ import UIKit
 
 class KingDetailViewController: UIViewController {
 
+    // MARK: - Outlets
     
     @IBOutlet weak var sigilImageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+        }
+    }
+    
+    // MARK: - Properties
     
     fileprivate(set) var viewModel: KingDetailViewModel?
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setSigilImage()
-        setupTableView()
     }
 }
 
 // MARK: - New Instance
+
 extension KingDetailViewController {
     class func newInstance() -> KingDetailViewController {
         return Storyboard
@@ -36,6 +45,7 @@ extension KingDetailViewController {
 }
 
 // MARK: - UI Update
+
 extension KingDetailViewController {
     fileprivate func setupUI() {
         self.title = NSLocalizedString("Battles Fought", comment: "Battles Fought")
@@ -43,6 +53,7 @@ extension KingDetailViewController {
 }
 
 // MARK: - Setter
+
 extension KingDetailViewController {
     func setViewModel(_ viewModel: KingDetailViewModel) {
         self.viewModel = viewModel
@@ -50,15 +61,27 @@ extension KingDetailViewController {
 }
 
 // MARK: - Connections Setup
+
 extension KingDetailViewController {
-    func setupTableView() {
-        tableView.dataSource = viewModel
-    }
-    
     func setSigilImage() {
         if let mappedImageName = viewModel?.attributes[Constants.KingDetail.name] as? String,
             let imageName = ImageMapper.imageDicationary[mappedImageName] {
             sigilImageView.image = UIImage.init(named: imageName)
         }
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension KingDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (self.viewModel?.attributes[Constants.KingDetail.battles] as? [String])?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
+        let battleName = (self.viewModel!.attributes[Constants.KingDetail.battles] as! [String])[indexPath.row]
+        cell.textLabel?.text = battleName
+        return cell
     }
 }
