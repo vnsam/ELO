@@ -35,7 +35,7 @@ class BattleKingMap {
                 defenderKing.defenses += 1
                 
                 // Elo Score
-                ELOCalculator.update(attacker: attackerKing,
+                ELOCalculator.updateScore(attacker: attackerKing,
                                      defender: defenderKing,
                                      attackerWon: Constants.Battle.AttackerOutcome.win == battle.attackerOutcome)
             }

@@ -12,7 +12,7 @@ import Foundation
  Abstract: Formula from: https://en.wikipedia.org/wiki/Elo_rating_system
 */
 class ELOCalculator {
-    class func update(attacker: King, defender: King, attackerWon: Bool) {
+    class func updateScore(attacker: King, defender: King, attackerWon: Bool) {
         var r1: Double = attacker.eloScore
         var r2: Double = defender.eloScore
         
