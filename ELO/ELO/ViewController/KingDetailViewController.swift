@@ -82,7 +82,7 @@ extension KingDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell")
         /*
-         self.viewModel! - viewModel is force unwrapped here, unless the viewModel is not nill,
+         viewModel! - viewModel is force unwrapped here, unless the viewModel is not nill,
             we won't get to cell for row at index path
         */
         let battleName = (viewModel!.attributes[Constants.KingDetail.battles] as! [String])[indexPath.row]
