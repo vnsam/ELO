@@ -17,3 +17,6 @@
 
 // Test cases:
 1. Write test case for contestents -'draw' state
+
+// UI Updates:
+1. Make King Detail view controller vary for size class
