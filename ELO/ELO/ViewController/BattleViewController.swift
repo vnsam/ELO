@@ -37,7 +37,7 @@ class BattleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        initiateFetchBattleDetails()
+        refetchBattleDetails()
     }
     
     // MARK: - Custom Objects Intialization
@@ -56,10 +56,10 @@ class BattleViewController: UIViewController {
     // MARK: - UI Action
     
     @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
-        refreshButtonAction()
+        refetchBattleDetails()
     }
     
-    private func refreshButtonAction() {
+    private func refetchBattleDetails() {
         refreshViewModel()
         initiateFetchBattleDetails()
     }
