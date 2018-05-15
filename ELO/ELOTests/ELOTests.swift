@@ -28,6 +28,7 @@ class ELOTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
     func testJSONObjectsDecode() {
         guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
             let data = try? Data.init(contentsOf: jsonPath) else {
@@ -38,32 +39,7 @@ class ELOTests: XCTestCase {
         let battles = try? decoder.decode([Battle].self, from: data)
         XCTAssert(nil != battles)
     }
-    // MARK: - ELO Calculator
-    /*
-     Opponent Score: 600
-     Factor: 400
-     Wins: 2
-     Loses: 1
-     Number Of games: 3
-     Expected: 333.33
-     */
-    func testELOCalculator() {
-        let performanceScore = ELOCalculator.calculate(opponentScore: 600.0, wins: 2, losses: 1)
-        // NEEDS PRECISION RESULT HERE. GET RID OF INT type cast and assert to accuracy.
-        XCTAssert(Int(performanceScore) == 333, "Score Mataches")
-    }
-    // FIXME: - DO NOT SHIP THIS FUNCTION `testDummyFunction` TO PRODUCTION
-    func testDummyFunction() {
-        guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
-            let data = try? Data.init(contentsOf: jsonPath) else {
-                XCTAssert(false, "JSON file not present in the path specified || DATA is nil")
-                return
-        }
-        let decoder = JSONDecoder.init()
-        let battles = try? decoder.decode([Battle].self, from: data)
-        let kings = BattleKingMap.mapKingToBattles(battles!)
-        XCTAssert(nil != battles)
-    }
+
     /*
      Adding the count of won + lost ==> Total Number of battles
     */
