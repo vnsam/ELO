@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol KingDetails {
+protocol BattlePlayer {
+    associatedtype Role
+    
+    var rolePlayed: Role { get }
     var name: String { get set }
     var battlesWon: Int { get set }
     var battlesLost: Int { get set }

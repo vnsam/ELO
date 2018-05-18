@@ -8,7 +8,16 @@
 
 import Foundation
 
-class King: KingDetails, BattleScore {
+class King: BattlePlayer, BattleScore {
+    typealias Role = String
+    
+    var rolePlayed: String {
+        get {
+            return String.init(describing: King.self)
+        }
+    }
+    
+    var role: Role!
     var name: String = ""
     var battlesWon: Int {
         get {
