@@ -11,7 +11,7 @@ import Foundation
 class KingListViewModel {
     fileprivate(set) var attributes: [String: String] = [:]
     
-    func setAttributes(_ attributes: [String: String]) {
+    init(attributes: [String: String]) {
         self.attributes = attributes
     }
 }

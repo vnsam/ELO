@@ -79,7 +79,6 @@ extension KingBattleViewModel {
 extension KingBattleViewModel {
     fileprivate func buildAndSetCellViewModels() {
         for king in kings {
-            let viewModel = KingListViewModel()
             var attributes: [String: String] = [:]
             
             attributes[Constants.Cell.Attributes.kingName] = king.name
@@ -89,7 +88,7 @@ extension KingBattleViewModel {
             attributes[Constants.Cell.Attributes.attacks] = "\(king.attacks)"
             attributes[Constants.Cell.Attributes.defenses] = "\(king.defenses)"
             
-            viewModel.setAttributes(attributes)
+            let viewModel = KingListViewModel(attributes: attributes)
             
             cellViewModels.append(viewModel)
         }
