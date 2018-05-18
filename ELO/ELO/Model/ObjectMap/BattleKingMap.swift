@@ -55,4 +55,19 @@ class BattleKingMap {
         
         return uniqueKings
     }
+    
+    class func updateBattleOutcome(attackerKing: King, defenderKing: King, battleOutcome: Battle.Outcome) {
+        switch battleOutcome {
+        case Constants.Battle.AttackerOutcome.win:
+            attackerKing.battlesWon += 1
+            defenderKing.battlesLost += 1
+        case Constants.Battle.AttackerOutcome.lose:
+            defenderKing.battlesWon += 1
+            attackerKing.battlesLost += 1
+        case Constants.Battle.AttackerOutcome.draw:
+            return
+        default:
+            return
+        }
+    }
 }

@@ -36,6 +36,8 @@ extension Constants {
     struct Battle {
     struct AttackerOutcome {
             static let win = "win"
+            static let lose = "loss"
+            static let draw = "draw"
         }
     }
 }

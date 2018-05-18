@@ -100,4 +100,23 @@ class ELOTests: XCTestCase {
         let battles = BattleParser.getBattlesFromData(data)
         XCTAssert((nil != battles && battles!.count > 0), "Parsed battles")
     }
+    
+    /*
+    Test draw count
+    */
+    // Battles count is no longer ==> win + loss count. It is win + loss + draw count
+    func testBattleDrawCondtion() {
+        guard let jsonPath = Bundle.main.url(forResource: "gotjson", withExtension: "json"),
+            let data = try? Data.init(contentsOf: jsonPath) else { return }
+        
+        if let battles = BattleParser.getBattlesFromData(data),
+            let kings = BattleKingMap.mapKingToBattles(battles),
+            let kingJoffrey = kings.filter({ $0.name == "Joffrey/Tommen Baratheon" }).first {
+            
+            let battlesCount = kingJoffrey.battles.count
+            let actualBattleCount = kingJoffrey.battlesWon + kingJoffrey.battlesLost + kingJoffrey.battlesDrew
+            
+            XCTAssertEqual(battlesCount, actualBattleCount)
+        }
+    }
 }

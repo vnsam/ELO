@@ -9,6 +9,9 @@
 import Foundation
 
 class Battle: BattleDetails, Decodable {
+    
+    typealias Outcome = String
+    
     var name: String {
         get {
             return attributes[CodingKeys.name.rawValue] as? String ?? ""

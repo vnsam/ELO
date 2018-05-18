@@ -15,6 +15,7 @@ protocol BattlePlayer {
     var name: String { get set }
     var battlesWon: Int { get set }
     var battlesLost: Int { get set }
+    var battlesDrew: Int { get set}
     var totalOpponents: Int { get } // You might not need this each battle will have an opponent - Clarify
     var battles: [Battle] { get set }
     var attacks: Int { get set }

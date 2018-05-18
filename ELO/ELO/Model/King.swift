@@ -9,7 +9,7 @@
 import Foundation
 
 class King: BattlePlayer, BattleScore {
-    typealias Role = String
+    typealias Role = String // This can be - typealias Role = 'King' as well. The confirming class will decide.
     
     var rolePlayed: String {
         get {
@@ -17,8 +17,8 @@ class King: BattlePlayer, BattleScore {
         }
     }
     
-    var role: Role!
     var name: String = ""
+    
     var battlesWon: Int {
         get {
             return won
@@ -26,6 +26,7 @@ class King: BattlePlayer, BattleScore {
             self.won = value
         }
     }
+    
     var battlesLost: Int {
         get {
             return lost
@@ -33,6 +34,15 @@ class King: BattlePlayer, BattleScore {
             self.lost = value
         }
     }
+    
+    var battlesDrew: Int {
+        get {
+            return drew
+        } set (value) {
+            self.drew = value
+        }
+    }
+    
     var totalOpponents: Int {
         return battles.count // Follow up on the comment from Protocol - What if 2 kings fight against a king. This ain't accurate.
     }
@@ -60,6 +70,7 @@ class King: BattlePlayer, BattleScore {
     // MARK: - Properties
     private var won = 0
     private var lost = 0
+    private var drew = 0
     private var battlesFought: [Battle] = []
     private var numberOfAttacks: Int = 0
     private var numberOFDefenses: Int = 0
