@@ -9,7 +9,7 @@
 import Foundation
 
 protocol BattlePlayer {
-    associatedtype Role
+    associatedtype Role // Anyone confirming to Battleplayer will return the confirming type here.
     
     var rolePlayed: Role { get }
     var name: String { get set }
