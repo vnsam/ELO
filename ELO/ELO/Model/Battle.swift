@@ -80,6 +80,12 @@ class Battle: BattleDetails, Decodable {
         static let all: [CodingKeys] = [.name, .attackerking, .defenderking,
                                         .attackeroutcome, .location, .region]
     }
+    /*
+    Decodable - expects to see the below init function as non nil one.
+     public init(from decoder: Decoder) throws
+     
+     Since battle conforms to Decodable - we aren't able to skip this non nil init and have a custom failble init.
+    */
     public required convenience init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         var attributes: [AnyHashable: Any?] = [:]
