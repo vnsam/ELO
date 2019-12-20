@@ -17,7 +17,7 @@ extension Constants {
         // timeout
         static let timeoutInterval = 60.0
         
-        static let baseURL = "http://starlord.hackerearth.com/"
+        static let baseURL = "https://web.archive.org/web/20181018102258/http://starlord.hackerearth.com/"
         struct Endpoint {
             static let battleInfo = "gotjson"
         }
